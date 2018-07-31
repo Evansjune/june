@@ -20,7 +20,7 @@
                         if(isset($_GET['result'])){
                             if ($_GET['result']==='success'){
                                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                      <strong>successfully registered.continue to login.</strong>
+                                      <strong>successfully registered. continue to login.</strong>
                                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
@@ -36,7 +36,15 @@
                             }
                             if ($_GET['result']==='login'){
                                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                      <strong>please login.</strong>
+                                      <strong>please login to start your session.</strong>
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>';
+                            }
+                            if ($_GET['result']==='logout'){
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                      <strong>Successfully logged out.</strong>
                                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>

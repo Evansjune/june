@@ -33,6 +33,7 @@
 						id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 						user_id INT(255) NOT NULL,
 						project_name VARCHAR(255) NOT NULL,
+						Description VARCHAR(255) NOT NULL,
 						created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 						UNIQUE(project_name)
 						)";

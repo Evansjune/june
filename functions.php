@@ -58,7 +58,8 @@
 	if(isset($_POST['submit'])){
 		$userid=strip_tags($_POST['user_id']);
 		$project=strip_tags($_POST['project']);
-		$insert = "insert into project(user_id,project_name)values('$uid','$project')";
+		$description=strip_tags($_POST['description']);
+		$insert = "insert into project(user_id,project_name,Description)values('$uid','$project','$description')";
 		if($conn->query($insert)==true){
 			header('Location:index.php?result=project');
 		}
@@ -67,6 +68,21 @@
 		}
 
 	}
+
+	if(isset($_GET['id'])){
+		$id = $_GET['id'];
+		$delete = "delete from project where id='$id'";
+		$result = $conn->query($delete);
+		if($result==true){
+			header('Location:index.php?result=deleted');
+		}else{
+			header('Location:index.php?result=not_deleted');
+		}
+
+		
+	}
+
+	
 	$conn->close();
 ?>
 		
